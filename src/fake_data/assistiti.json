@@ -1,0 +1,95 @@
+[
+  {
+    "nr_pratica": "00000001",
+    "nome": "Mario",
+    "cognome": "Rossi",
+    "data_nascita": "12-05-1980",
+    "nazionalita": "italiana",
+    "indirizzo": "Via Roma 1, Milano",
+    "email": "mario.rossi@email.com",
+    "telefono": "3331234567",
+
+    "motivo_consulenza": "richiesta asilo",
+    "descrizione_problema": "testo di esempio",
+    "procedimenti_corso": "no",
+
+    "status_immigrazione": "rifugiato",
+    "data_arrivo": "05-01-2020",
+    "lingua_madre": "arabo",
+    "livello_lingua": "B1",
+    "info_famiglia": "testo di esempio",
+
+    "discriminazioni": "no",
+    "problemi_salute": "no",
+    "assistenza_linguistica": "no",
+
+    "consenso_trattamento_dati": true,
+    "dichiarazione_veridicita": "testo di esempio",
+
+    "data_prima_consultazione": "31-12-2021",
+    "avvocato_assegnato": "Luca Bianchi",
+    "servizi_assistenza": "interpretariato"
+  },
+  {
+    "nr_pratica": "00000002",
+    "nome": "Marco",
+    "cognome": "Rossi",
+    "data_nascita": "12-05-1980",
+    "nazionalita": "italiana",
+    "indirizzo": "Via Roma 1, Milano",
+    "email": "mario.rossi@email.com",
+    "telefono": "3331234567",
+
+    "motivo_consulenza": "richiesta asilo",
+    "descrizione_problema": "testo di esempio",
+    "procedimenti_corso": "no",
+
+    "status_immigrazione": "rifugiato",
+    "data_arrivo": "05-01-2020",
+    "lingua_madre": "arabo",
+    "livello_lingua": "B1",
+    "info_famiglia": "testo di esempio",
+
+    "discriminazioni": "no",
+    "problemi_salute": "no",
+    "assistenza_linguistica": "no",
+
+    "consenso_trattamento_dati": true,
+    "dichiarazione_veridicita": "testo di esempio",
+
+    "data_prima_consultazione": "31-12-2021",
+    "avvocato_assegnato": "Luca Bianchi",
+    "servizi_assistenza": "interpretariato"
+  },
+  {
+    "nr_pratica": "00000003",
+    "nome": "Filippo",
+    "cognome": "Rossi",
+    "data_nascita": "12-05-1980",
+    "nazionalita": "italiana",
+    "indirizzo": "Via Roma 1, Milano",
+    "email": "mario.rossi@email.com",
+    "telefono": "3331234567",
+
+    "motivo_consulenza": "richiesta asilo",
+    "descrizione_problema": "testo di esempio",
+    "procedimenti_corso": "no",
+
+    "status_immigrazione": "rifugiato",
+    "data_arrivo": "05-01-2020",
+    "lingua_madre": "arabo",
+    "livello_lingua": "B1",
+    "info_famiglia": "testo di esempio",
+
+    "discriminazioni": "no",
+    "problemi_salute": "no",
+    "assistenza_linguistica": "no",
+
+    "consenso_trattamento_dati": true,
+    "dichiarazione_veridicita": "testo di esempio",
+
+    "data_prima_consultazione": "31-12-2021",
+    "avvocato_assegnato": "Luca Bianchi",
+    "servizi_assistenza": "interpretariato"
+  }
+]

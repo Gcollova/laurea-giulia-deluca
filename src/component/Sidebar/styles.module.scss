@@ -1,0 +1,64 @@
+.main {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+  &__title {
+    h3 {
+      font-size: larger;
+      font-weight: 700;
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .assistito {
+      background-color: #cccc;
+      cursor: pointer;
+      display: flex;
+
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      padding: 0.5rem;
+      &__info {
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        gap: 0.5rem;
+        width: 50%;
+        height: 100%;
+      }
+      &__pratica {
+        font-weight: 500;
+        font-size: smaller;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 50%;
+        height: 100%;
+      }
+
+      &:hover {
+        background-color: #f6f5f2cc;
+      }
+    }
+  }
+  &__button_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

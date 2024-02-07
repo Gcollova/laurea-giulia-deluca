@@ -1,0 +1,60 @@
+{
+  "name": "rtw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "deploy": "gh-pages -d build",
+    "start": "webpack-dev-server --open --hot --config webpack.dev.js"
+  },
+  "engines": {
+    "npm": ">=9.0.0 <=10.3.0",
+    "node": "20.11.0"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.12.1",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.4",
+    "@mui/material": "^5.15.4",
+    "@stripe/react-stripe-js": "^2.4.0",
+    "@stripe/stripe-js": "^2.4.0",
+    "axios": "^1.6.5",
+    "emailjs": "^4.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "wase_tournaments": "file:.."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^29.5.6",
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.32",
+    "@types/react-dom": "^18.2.14",
+    "@types/react-helmet": "^6.1.11",
+    "@types/react-scroll": "^1.8.10",
+    "@types/react-slick": "^0.23.13",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.8.1",
+    "dotenv-webpack": "^8.0.1",
+    "gh-pages": "^6.1.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "sass": "^1.69.4",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0"
+  }
+}

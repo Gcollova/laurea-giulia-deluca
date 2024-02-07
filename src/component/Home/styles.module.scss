@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  &__header {
+    height: 5%;
+  }
+  &__wrapper {
+    height: 95%;
+    display: flex;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    &__sidebar {
+      min-width: 25%;
+      width: 25%;
+    }
+    &__renderer {
+      width: 75%;
+      max-width: 75%;
+      height: 100%;
+    }
+  }
+}

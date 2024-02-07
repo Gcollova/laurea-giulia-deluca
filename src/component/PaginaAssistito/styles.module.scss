@@ -1,0 +1,88 @@
+.main {
+  background-color: rgb(198, 198, 198);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+
+  &__title {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    padding: 1rem;
+    overflow: hidden;
+    font-size: larger;
+    font-weight: 600;
+    span {
+      display: block;
+      width: auto;
+    }
+  }
+  .renderer {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  &__wrapper {
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .field {
+      padding: 0.5rem;
+      width: 100%;
+      display: flex;
+      height: auto;
+      gap: 0.5rem;
+      align-items: baseline;
+      .label {
+        font-size: medium;
+        font-weight: 400;
+      }
+      .value {
+        font-size: medium;
+        font-weight: 500;
+      }
+    }
+    .half_field {
+      padding: 0.5rem;
+      width: 45%;
+      height: 10%;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      .label {
+        font-size: medium;
+        font-weight: 400;
+      }
+      .value {
+        font-size: medium;
+        font-weight: 500;
+      }
+    }
+    .third_field {
+      padding: 0.5rem;
+      max-width: 30%;
+      min-width: 30%;
+      height: 10%;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      .label {
+        font-size: medium;
+        font-weight: 400;
+      }
+      .value {
+        font-size: medium;
+        font-weight: 500;
+      }
+    }
+  }
+}
