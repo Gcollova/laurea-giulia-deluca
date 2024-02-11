@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://gcollova.github.io/laurea-giulietta/",
+  "homepage": "https://gcollova.github.io/laurea-giulia-deluca/",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "deploy": "gh-pages -d dist",
