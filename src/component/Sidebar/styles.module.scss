@@ -1,17 +1,24 @@
 .main {
-  background-color: green;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
   gap: 2rem;
+  
   &__title {
+    background-color:#000 ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #d6d1d1;
     h3 {
-      font-size: larger;
-      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 0;
+      font-weight: 700;      
+      color: #d6d1d1;
     }
   }
   &__wrapper {
@@ -24,13 +31,12 @@
       background-color: #cccc;
       cursor: pointer;
       display: flex;
-
-      align-items: center;
-      justify-content: space-around;
-      width: 100%;
-      padding: 0.5rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-radius: 7px;
       &__info {
-        font-weight: 600;
+        font-weight: 700;
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -43,16 +49,29 @@
         font-weight: 500;
         font-size: smaller;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: flex-end;
-        width: 50%;
+        width: 100%;
         height: 100%;
       }
 
-      &:hover {
-        background-color: #f6f5f2cc;
+      
+    }
+    .assistito_selected{
+      background-color: #DB2A23;
+      .assistito__info {
+        span{
+
+          color: #ffff !important;
+        }
       }
+      .assistito__pratica {
+        span{
+
+          color: #ffff !important;
+        }
+      }
+      transition: all 0.2s ease !important;
     }
   }
   &__button_wrapper {

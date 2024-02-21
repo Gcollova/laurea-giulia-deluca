@@ -1,0 +1,198 @@
+.main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    &__section{
+        width: 100%;
+        &_title{
+            width: 100%;
+            padding: 1rem 3rem;
+            font-size: 1.5rem;
+            background-color: #DB2A23;
+            border-radius: 10px;
+            h2{
+
+                color: #fff;
+            }
+        }
+        &_content{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+            
+            padding: 1rem 0;
+        }
+    }
+    &__input_wrapper{
+        width: calc(33%);
+        min-width: 33%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        gap: 2rem;
+        align-items: center;
+        label{
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        input{
+            width: 100%;
+            padding: 0.2rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        
+    }
+    &__input_wrapper_double{
+        width: calc(50%);
+        min-width: 50%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        gap: 2rem;
+        align-items: center;
+        label{
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        input{
+            width: 100%;
+            padding: 0.2rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        
+    }
+    &__input_wrapper_full{
+        width: calc(100%);
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        gap: 2rem;
+        align-items: center;
+        label{
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        input{
+            width: 100%;
+            padding: 0.2rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+    &__textarea_wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        align-items: flex-start;
+        label{
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        textarea{
+            width: 100%;
+            min-height: 8rem;
+            padding: 0.2rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            resize: none;
+        }
+        
+    }
+    &__checkbox_wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        align-items: flex-start;
+        label{
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        input{
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            resize: none;
+        }
+        span{
+            text-align: start;
+        }
+        
+        .main__input_wrapper{
+            width: 100%;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+            .square_wrapper{
+                display: flex;
+                justify-content: flex-start;
+                width: auto;
+                
+                &__input_opt{
+                    gap: 2rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    input{
+
+                        max-width: 28rem;
+                        width: 100%;
+                    }
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.square_wrapper{
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: flex-end;
+    img{
+        height: 2rem;
+        width: 2rem;
+        cursor: pointer; 
+    }
+}
+
+.square{
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover{
+        background-color: #cccccc91;
+    }
+    
+}
+.square__selected{
+    background-color: #DB2A23 !important ;
+    color: #fff !important;
+}
+.bold{
+    font-weight: 700;
+}

@@ -1,25 +1,29 @@
 import styles from "./styles.module.scss";
 import fake_data from "../../fake_data/assistiti.json";
 import { Assistito } from "../../models/assistito";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MainContext } from "../../context/main";
 const Sidebar = () => {
   const assistiti: Assistito[] = fake_data;
-  const { setAssistito } = useContext(MainContext);
+  const { setAssistito,assistito, } = useContext(MainContext);
+
+  
+  
   const renderAssistiti = () => {
-    return assistiti.map((assistito, index) => {
+    return assistiti.map((assist, index) => {
       return (
         <div
-          key={assistito.nr_pratica}
-          className={styles.assistito}
-          onClick={() => setAssistito(assistito)}
+          key={assist.nr_pratica}
+          className={`${styles.assistito} ${assist === assistito && styles.assistito_selected}`}
+          onClick={() => {setAssistito(assist);}}
         >
           <div className={styles.assistito__info}>
-            <span>{`${assistito.nome} ${assistito.cognome}`}</span>
-            <span>{`${assistito.data_prima_consultazione}`}</span>
+            <span>{`${assist.nome} ${assist.cognome}`}</span>
+            
           </div>
           <div className={styles.assistito__pratica}>
-            <span>{`Nr pratica: ${assistito.nr_pratica}`}</span>
+          <span>{`${assist.data_prima_consultazione}`}</span>
+            <span>{`Nr pratica: ${assist.nr_pratica}`}</span>
           </div>
         </div>
       );
@@ -27,13 +31,9 @@ const Sidebar = () => {
   };
   return (
     <div className={styles.main}>
-      <div className={styles.main__title}>
-        <h3>Pratiche</h3>
-      </div>
+      
       <div className={styles.main__wrapper}>{renderAssistiti()}</div>
-      <div className={styles.main__button_wrapper}>
-        <button onClick={() => setAssistito(undefined)}>NUOVA PRATICA</button>
-      </div>
+      
     </div>
   );
 };

@@ -2,6 +2,7 @@ export interface Assistito {
   nr_pratica: string;
   nome: string;
   cognome: string;
+  sesso:string,
   data_nascita: string;
   nazionalita: string;
   indirizzo: string;

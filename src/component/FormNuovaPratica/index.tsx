@@ -1,35 +1,18 @@
-import { Assistito } from "../../models/assistito";
-import styles from "./styles.module.scss";
+import { useEffect, useState } from 'react';
+import styles from './styles.module.scss';
 import fileImg from '../media/file.png';
-import { useContext, useEffect, useState } from "react";
-import { MainContext } from "../../context/main";
 
-
-const Paginaass = () => {
-  const {assistito} = useContext(MainContext)
-  const [gender,setGender] = useState<string>(assistito.sesso);
-    const [rd,setRd] = useState<string>("R");
-    const [al,setAl] = useState<string>("N");
-    const [checkbox,setCheckbox] = useState<string[]>(["C","E","V","Z"]);
-    const [assRender,setAssRender] = useState(assistito);
+const NuovaPratica = () => {
+    const [gender,setGender] = useState<string>();
+    const [rd,setRd] = useState<string>();
+    const [al,setAl] = useState<string>();
+    const [checkbox,setCheckbox] = useState<string[]>([]);
 
     const dispatchCheckbox = (value:string) => {
         checkbox.includes(value) ? setCheckbox(checkbox.filter(el => el !== value)) : setCheckbox([...checkbox,value])
     }
     
-    useEffect(() => {
-      if(assRender.nome !== assistito.nome){
-        console.log('triggered')
-        setAssRender({...assistito})
-        setGender(assistito.sesso)
-        setRd(rd === "R" ? "D" : "R")
-      }
-    }, [assistito])
-    
-
-    function reRender(ass:Assistito) {
-
-      return(
+    return(
         <div className={styles.main}>
 
             {/*---------------------/DATI PERSONALI------------------------ */}
@@ -41,18 +24,18 @@ const Paginaass = () => {
                 <div className={styles.main__section_content}>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="name">Nome</label>
-                        <input disabled value={assRender.nome} type="text" id='name' name='name' />
+                        <input type="text" id='name' name='name' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="last_name">Cognome</label>
-                        <input disabled value={assRender.cognome} type="text" id='last_name' name='last_name' />
+                        <input type="text" id='last_name' name='last_name' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="gender">Sesso</label>
                         <div className={styles.square_wrapper}>
 
-                        <span  id='M' className={`${styles.square} ${gender === "M" && styles.square__selected}`}>M</span>
-                        <span   id='F' className={`${styles.square} ${gender === "F" && styles.square__selected}`}>F</span>
+                        <span onClick={(e:any) => setGender('M')} id='M' className={`${styles.square} ${gender === "M" && styles.square__selected}`}>M</span>
+                        <span onClick={(e:any) => setGender('F')}  id='F' className={`${styles.square} ${gender === "F" && styles.square__selected}`}>F</span>
                         </div>
                     </div>
                     
@@ -60,18 +43,18 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="date">Data di nascita</label>
-                        <input disabled value={assRender.data_nascita}  type="text" id='date' name='date' />
+                        <input type="date" id='date' name='date' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="address">Indirizzo</label>
-                        <input disabled value={assRender.indirizzo} type="text" id='address' name='address' />
+                        <input type="text" id='address' name='address' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="Residenza/domicilio">Residenza/Domicilio</label>
                         <div className={styles.square_wrapper}>
 
-                        <span  id='R' className={`${styles.square} ${rd === "R" && styles.square__selected}`}>R</span>
-                        <span   id='D' className={`${styles.square} ${rd === "D" && styles.square__selected}`}>D</span>
+                        <span onClick={(e:any) => setRd('R')} id='R' className={`${styles.square} ${rd === "R" && styles.square__selected}`}>R</span>
+                        <span onClick={(e:any) => setRd('D')}  id='D' className={`${styles.square} ${rd === "D" && styles.square__selected}`}>D</span>
                         </div>
                     </div>
 
@@ -79,33 +62,33 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="nat">Nazionalita'</label>
-                        <input disabled value={assRender.nazionalita} type="text" id='nat' name='nat' />
+                        <input type="text" id='nat' name='nat' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="tel">Telefono</label>
-                        <input disabled value={assRender.telefono} type="tel" id='tel' name='tel' />
+                        <input type="tel" id='tel' name='tel' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="email">Email</label>
-                        <input disabled value={assRender.email} type="email" id='email' name='email' />
+                        <input type="email" id='email' name='email' />
                     </div>
 
                     {/* ROW 4 */}
 
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="lang">Lingua</label>
-                        <input disabled value={assRender.lingua_madre} type="text" id='lang' name='lang' />
+                        <input type="date" id='lang' name='lang' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="lev">Livello lingua italiana</label>
-                        <input disabled value={assRender.livello_lingua} type="text" id='lev' name='lev' />
+                        <input type="text" id='lev' name='lev' />
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <label htmlFor="abs">Assistenza Linguistica</label>
                         <div className={styles.square_wrapper}>
 
-                        <span id='S' className={`${styles.square} ${al === "S" && styles.square__selected}`}>SI</span>
-                        <span id='N' className={`${styles.square} ${al === "N" && styles.square__selected}`}>NO</span>
+                        <span onClick={(e:any) => setAl('S')} id='S' className={`${styles.square} ${al === "S" && styles.square__selected}`}>SI</span>
+                        <span onClick={(e:any) => setAl('N')}  id='N' className={`${styles.square} ${al === "N" && styles.square__selected}`}>NO</span>
                         </div>
                     </div>
                 </div>
@@ -124,14 +107,14 @@ const Paginaass = () => {
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="disc">Esperienze di discriminazione o violenza</label>
-                        <textarea onChange={() => {}} disabled name="disc" id="disc" draggable='false'></textarea>
+                        <textarea name="disc" id="disc" draggable='false'></textarea>
                     </div>
                     
                     {/* ROW 2 */}
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="text2">Problemi di salute o disabilità che influenzano il caso</label>
-                        <textarea onChange={() => {}} disabled name="text2" id="text2" draggable='false'></textarea>
+                        <textarea name="text2" id="text2" draggable='false'></textarea>
                     </div>
                     
 
@@ -139,11 +122,11 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="serv">Servizi di assistenza</label>
-                        <input disabled value={assRender.servizi_assistenza} type="text" id='serv' name='serv' />
+                        <input type="text" id='serv' name='serv' />
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="assist">Assistente</label>
-                        <input disabled value={"Giammarco Bettoli"} type="text" id='assist' name='assist' />
+                        <input type="text" id='assist' name='assist' />
                     </div>
                     
 
@@ -232,13 +215,13 @@ const Paginaass = () => {
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="desc">Breve descrizione del problema legale</label>
-                        <textarea onChange={() => {}} disabled name="desc" id="desc" draggable='false'></textarea>
+                        <textarea name="desc" id="desc" draggable='false'></textarea>
                     </div>
                     {/* ROW 3 */}
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="probleg">Eventuali procedimenti legali in corso</label>
-                        <textarea onChange={() => {}} disabled name="probleg" id="probleg" draggable='false'></textarea>
+                        <textarea name="probleg" id="probleg" draggable='false'></textarea>
                     </div>
                     
 
@@ -262,17 +245,17 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="status">Status di immigrazione</label>
-                        <input disabled value={assRender.status_immigrazione}  type="text" id='status' name='status' />
+                        <input  type="text" id='status' name='status' />
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="datarr">Data di arrivo nel Paese</label>
-                        <input disabled value={assRender.data_arrivo} type="text" id='datarr' name='datarr' />
+                        <input type="text" id='datarr' name='datarr' />
                     </div>
                     {/* ROW 2 */}
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="faminfo">Informazioni sulla famiglia (se pertinenti al caso)</label>
-                        <textarea onChange={() => {}} disabled name="faminfo" id="faminfo" draggable='false'></textarea>
+                        <textarea name="faminfo" id="faminfo" draggable='false'></textarea>
                     </div>
                     
                     
@@ -299,28 +282,28 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Data della prima consultazione">Data della prima consultazione</label>
-                        <input disabled value={assRender.data_prima_consultazione}  type="text" id='Data della prima consultazione' name='Data della prima consultazione' />
+                        <input  type="text" id='Data della prima consultazione' name='Data della prima consultazione' />
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Numero caso">Numero caso</label>
-                        <input disabled value={assRender.nr_pratica} type="text" id='Numero caso' name='Numero caso' />
+                        <input type="text" id='Numero caso' name='Numero caso' />
                     </div>
                     {/* ROW 2 */}
 
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Tutor CLEDU">Tutor CLEDU</label>
-                        <input disabled value={'Emanuela Sanza'}  type="text" id='Tutor CLEDU' name='Tutor CLEDU' />
+                        <input  type="text" id='Tutor CLEDU' name='Tutor CLEDU' />
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Studente-Volontario CLEDU">Studente-Volontario CLEDU</label>
-                        <input disabled value={'Cosimo Imburgi'} type="text" id='Studente-Volontario CLEDU' name='Studente-Volontario CLEDU' />
+                        <input type="text" id='Studente-Volontario CLEDU' name='Studente-Volontario CLEDU' />
                     </div>
 
                     {/* ROW 3 */}
 
                     <div className={styles.main__input_wrapper_full}>
                         <label htmlFor="A quale centro/associazione/avvocato è stato indirizzato">A quale centro/associazione/avvocato è stato indirizzato</label>
-                        <input disabled  type="text" id='A quale centro/associazione/avvocato è stato indirizzato' name='A quale centro/associazione/avvocato è stato indirizzato' />
+                        <input  type="text" id='A quale centro/associazione/avvocato è stato indirizzato' name='A quale centro/associazione/avvocato è stato indirizzato' />
                     </div>
                     
                     
@@ -347,17 +330,17 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Data">Data</label>
-                        <input disabled value={"11/04/2023"}  type="text" id='Data' name='Data' />
+                        <input  type="date" id='Data' name='Data' />
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Struttura/servizio del reindirizzamento">Struttura/servizio del reindirizzamento</label>
-                        <input disabled value={'S.B.G'} type="text" id="Struttura/servizio del reindirizzamento" name="Struttura/servizio del reindirizzamento" />
+                        <input type="text" id="Struttura/servizio del reindirizzamento" name="Struttura/servizio del reindirizzamento" />
                     </div>
                     {/* ROW 2 */}
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="Motivo del reindirizzamento">Motivo del reindirizzamento</label>
-                        <textarea onChange={() => {}} disabled name="Motivo del reindirizzamento" id="Motivo del reindirizzamento" draggable='false'></textarea>
+                        <textarea name="Motivo del reindirizzamento" id="Motivo del reindirizzamento" draggable='false'></textarea>
                     </div>                  
 
                     
@@ -427,12 +410,6 @@ const Paginaass = () => {
             
         </div>
     )
-    }
+}
 
-    return reRender(assRender)
-    
-    
-    
-};
-
-export default Paginaass;
+export default NuovaPratica
