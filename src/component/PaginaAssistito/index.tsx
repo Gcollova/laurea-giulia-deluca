@@ -10,7 +10,7 @@ const Paginaass = () => {
   const [gender,setGender] = useState<string>(assistito.sesso);
     const [rd,setRd] = useState<string>("R");
     const [al,setAl] = useState<string>("N");
-    const [checkbox,setCheckbox] = useState<string[]>(["C","E","V","Z"]);
+    const [checkbox,setCheckbox] = useState<string[]>(assistito.checked);
     const [assRender,setAssRender] = useState(assistito);
 
     const dispatchCheckbox = (value:string) => {
@@ -22,7 +22,8 @@ const Paginaass = () => {
         console.log('triggered')
         setAssRender({...assistito})
         setGender(assistito.sesso)
-        setRd(rd === "R" ? "D" : "R")
+        setRd(assistito.residenza_domicilio)
+        setCheckbox(assistito.checked)
       }
     }, [assistito])
     
@@ -124,14 +125,14 @@ const Paginaass = () => {
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="disc">Esperienze di discriminazione o violenza</label>
-                        <textarea onChange={() => {}} disabled name="disc" id="disc" draggable='false'></textarea>
+                        <textarea onChange={() => {}} value={assRender.esperienze_violenza} disabled name="disc" id="disc" draggable='false'></textarea>
                     </div>
                     
                     {/* ROW 2 */}
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="text2">Problemi di salute o disabilità che influenzano il caso</label>
-                        <textarea onChange={() => {}} disabled name="text2" id="text2" draggable='false'></textarea>
+                        <textarea onChange={() => {}} value={assRender.problemi_salute} disabled name="text2" id="text2" draggable='false'></textarea>
                     </div>
                     
 
@@ -143,7 +144,7 @@ const Paginaass = () => {
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="assist">Assistente</label>
-                        <input disabled value={"Giammarco Bettoli"} type="text" id='assist' name='assist' />
+                        <input disabled value={assRender.assistente} type="text" id='assist' name='assist' />
                     </div>
                     
 
@@ -170,61 +171,61 @@ const Paginaass = () => {
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('A')} id='A' className={`${styles.square} ${checkbox.includes("A") && styles.square__selected}`}></span>
+                        <span  id='A' className={`${styles.square} ${checkbox.includes("A") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Protezione internazionale</label>
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('B')} id='B' className={`${styles.square} ${checkbox.includes("B") && styles.square__selected}`}></span>
+                        <span  id='B' className={`${styles.square} ${checkbox.includes("B") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Permesso di soggiorno e cittadinanza</label>
                     </div> 
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('C')} id='C' className={`${styles.square} ${checkbox.includes("C") && styles.square__selected}`}></span>
+                        <span  id='C' className={`${styles.square} ${checkbox.includes("C") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Espulsioni/Respingimenti</label>
                     </div> 
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('D')} id='D' className={`${styles.square} ${checkbox.includes("D") && styles.square__selected}`}></span>
+                        <span  id='D' className={`${styles.square} ${checkbox.includes("D") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Ricongiungimento familiare</label>
                     </div> 
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('E')} id='E' className={`${styles.square} ${checkbox.includes("E") && styles.square__selected}`}></span>
+                        <span  id='E' className={`${styles.square} ${checkbox.includes("E") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Minori stranieri non accompagnati</label>
                     </div> 
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('F')} id='F' className={`${styles.square} ${checkbox.includes("F") && styles.square__selected}`}></span>
+                        <span  id='F' className={`${styles.square} ${checkbox.includes("F") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Diritti economici e sociali-casa/salute/lavoro</label>
                         <div className={styles.square_wrapper__input_opt}>
 
                             <label htmlFor="spec3">Specificare</label>
-                            <input type="text" id='spec3' name='spec3' />
+                            <input disabled  value={assRender.specificare} type="text" id='spec3' name='spec3' />
                         </div>
                         
                     </div>   
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('G')} id='G' className={`${styles.square} ${checkbox.includes("G") && styles.square__selected}`}></span>
+                        <span  id='G' className={`${styles.square} ${checkbox.includes("G") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Altra area</label>
                         <div className={styles.square_wrapper__input_opt}>
 
                             <label htmlFor="indica">Indica</label>
-                            <input type="text" id='indica' name='indica' />
+                            <input disabled value={assRender.indica} type="text" id='indica' name='indica' />
                         </div>
                     </div> 
                     </div>
@@ -232,13 +233,13 @@ const Paginaass = () => {
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="desc">Breve descrizione del problema legale</label>
-                        <textarea onChange={() => {}} disabled name="desc" id="desc" draggable='false'></textarea>
+                        <textarea onChange={() => {}} value={assRender.descrizione_problema} disabled name="desc" id="desc" draggable='false'></textarea>
                     </div>
                     {/* ROW 3 */}
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="probleg">Eventuali procedimenti legali in corso</label>
-                        <textarea onChange={() => {}} disabled name="probleg" id="probleg" draggable='false'></textarea>
+                        <textarea onChange={() => {}} value={assRender.procedimenti_corso} disabled name="probleg" id="probleg" draggable='false'></textarea>
                     </div>
                     
 
@@ -272,7 +273,7 @@ const Paginaass = () => {
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="faminfo">Informazioni sulla famiglia (se pertinenti al caso)</label>
-                        <textarea onChange={() => {}} disabled name="faminfo" id="faminfo" draggable='false'></textarea>
+                        <textarea onChange={() => {}} value={assRender.info_famiglia} disabled name="faminfo" id="faminfo" draggable='false'></textarea>
                     </div>
                     
                     
@@ -309,18 +310,18 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Tutor CLEDU">Tutor CLEDU</label>
-                        <input disabled value={'Emanuela Sanza'}  type="text" id='Tutor CLEDU' name='Tutor CLEDU' />
+                        <input disabled value={assRender.tutor}  type="text" id='Tutor CLEDU' name='Tutor CLEDU' />
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Studente-Volontario CLEDU">Studente-Volontario CLEDU</label>
-                        <input disabled value={'Cosimo Imburgi'} type="text" id='Studente-Volontario CLEDU' name='Studente-Volontario CLEDU' />
+                        <input disabled value={assRender.studente_cledu} type="text" id='Studente-Volontario CLEDU' name='Studente-Volontario CLEDU' />
                     </div>
 
                     {/* ROW 3 */}
 
                     <div className={styles.main__input_wrapper_full}>
                         <label htmlFor="A quale centro/associazione/avvocato è stato indirizzato">A quale centro/associazione/avvocato è stato indirizzato</label>
-                        <input disabled  type="text" id='A quale centro/associazione/avvocato è stato indirizzato' name='A quale centro/associazione/avvocato è stato indirizzato' />
+                        <input disabled value={assRender.centro_reindirizzamento}  type="text" id='A quale centro/associazione/avvocato è stato indirizzato' name='A quale centro/associazione/avvocato è stato indirizzato' />
                     </div>
                     
                     
@@ -347,17 +348,17 @@ const Paginaass = () => {
 
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Data">Data</label>
-                        <input disabled value={"11/04/2023"}  type="text" id='Data' name='Data' />
+                        <input disabled value={assRender.data_reindirizzamento}  type="text" id='Data' name='Data' />
                     </div>
                     <div className={styles.main__input_wrapper_double}>
                         <label htmlFor="Struttura/servizio del reindirizzamento">Struttura/servizio del reindirizzamento</label>
-                        <input disabled value={'S.B.G'} type="text" id="Struttura/servizio del reindirizzamento" name="Struttura/servizio del reindirizzamento" />
+                        <input disabled value={assRender.struttura_reindirizzamento} type="text" id="Struttura/servizio del reindirizzamento" name="Struttura/servizio del reindirizzamento" />
                     </div>
                     {/* ROW 2 */}
 
                     <div className={styles.main__textarea_wrapper}>
                         <label htmlFor="Motivo del reindirizzamento">Motivo del reindirizzamento</label>
-                        <textarea onChange={() => {}} disabled name="Motivo del reindirizzamento" id="Motivo del reindirizzamento" draggable='false'></textarea>
+                        <textarea onChange={() => {}} disabled value={assRender.motivo_reindirizzamento} name="Motivo del reindirizzamento" id="Motivo del reindirizzamento" draggable='false'></textarea>
                     </div>                  
 
                     
@@ -380,14 +381,14 @@ const Paginaass = () => {
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('V')} id='V' className={`${styles.square} ${checkbox.includes("V") && styles.square__selected}`}></span>
+                        <span  id='V' className={`${styles.square} ${checkbox.includes("V") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Consenso al trattamento dei dati personali secondo le norme vigenti</label>
                     </div>
                     <div className={styles.main__input_wrapper}>
                         <div className={styles.square_wrapper}>
 
-                        <span onClick={(e:any) => dispatchCheckbox('Z')} id='Z' className={`${styles.square} ${checkbox.includes("Z") && styles.square__selected}`}></span>
+                        <span  id='Z' className={`${styles.square} ${checkbox.includes("Z") && styles.square__selected}`}></span>
                         </div>
                         <label className={styles.bold} htmlFor="">Dichiarazione di veridicità delle informazioni fornite</label>
                     </div> 
@@ -414,7 +415,7 @@ const Paginaass = () => {
                         <div className={styles.square_wrapper}>
                             <img src={fileImg} alt='file_img' />
                         </div>
-                        <label className={styles.bold} htmlFor="">Carica documenti pertinenti al caso</label>
+                        <label className={styles.bold} htmlFor="">Download documenti pretinenti al caso</label>
                     </div>
                     
                     </div>                 

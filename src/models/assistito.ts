@@ -8,7 +8,9 @@ export interface Assistito {
   indirizzo: string;
   email: string;
   telefono: string;
-
+  esperienze_violenza:string;
+  assistente:string;
+  centro_reindirizzamento:string;
   motivo_consulenza: string;
   descrizione_problema: string;
   procedimenti_corso: string;
@@ -29,4 +31,13 @@ export interface Assistito {
   data_prima_consultazione: string;
   avvocato_assegnato: string;
   servizi_assistenza: string;
+  tutor:string,
+  studente_cledu:string,
+  struttura_reindirizzamento:string,
+  data_reindirizzamento:string,
+  motivo_reindirizzamento:string,
+  specificare:string,
+  indica:string,
+  checked:string[],
+  residenza_domicilio:string
 }
