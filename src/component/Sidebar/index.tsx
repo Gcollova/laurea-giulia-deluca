@@ -27,7 +27,7 @@ const Sidebar = () => {
           </div>
           <div className={styles.assistito__pratica}>
           <span>{`${assist.data_prima_consultazione}`}</span>
-            <span>{`Nr pratica: ${assist.nr_pratica}`}</span>
+            <span>{` ${assist.nr_pratica}`}</span>
           </div>
         </div>
       );
