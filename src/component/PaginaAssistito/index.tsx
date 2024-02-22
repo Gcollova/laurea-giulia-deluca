@@ -158,7 +158,7 @@ const Paginaass = () => {
 
             <div className={styles.main__section}>
                 <div className={styles.main__section_title}>
-                    <h2>SITUAZIONE LEGAGE</h2>
+                    <h2>SITUAZIONE LEGALE</h2>
                 </div>
                 <div className={styles.main__section_content}>
                     {/* ROW 1 */}
