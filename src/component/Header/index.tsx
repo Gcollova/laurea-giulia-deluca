@@ -8,7 +8,7 @@ const Header = () => {
         <img src={logo} alt="log" />
       </div>
       <div className={styles.main__title_wrapper}>
-        BANCA DATI CLEDU
+        BANCA DATI
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ const TeamLegale = () => {
                 {selectors.map((selector) => {
                     return(
                         <div onClick={() => setSelectedSelector(selector)} key={selector} className={`${styles.element} ${selectedSelector === selector && styles.selected}`}>
-                            {selector}
+                            {selector.toUpperCase()}
                         </div>
                     )
                 })}
@@ -48,7 +48,7 @@ const TeamLegale = () => {
                 {toBeRendered().map(el => {
                     return(
                         <div key={el} className={styles.element}>
-                            {el}
+                            {el.toUpperCase()}
                         </div>
                     )
                 })}
