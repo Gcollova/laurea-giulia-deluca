@@ -1,7 +1,7 @@
 import styles from './styles.module.scss';
 import downloadImg from '../media/download.png'
 const SchedeAllegate = () => {
-    const schede = ["PROTEZIOE INTERNAZIONALE","PERMESSO DI CITTADINANZA E SOGGIORNO","ESPULSIONI/RESPINGIMENTI",'RICONGIUNGIMENTO FAMILIARE','MINORI STRANIERI NON ACCOMPAGNATI',]
+    const schede = ["PROTEZIONE INTERNAZIONALE","PERMESSO DI CITTADINANZA E SOGGIORNO","ESPULSIONI/RESPINGIMENTI",'RICONGIUNGIMENTO FAMILIARE','MINORI STRANIERI NON ACCOMPAGNATI',]
     return(
         <div className={styles.main}>
             <div className={styles.main__wrapper}>
